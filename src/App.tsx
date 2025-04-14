@@ -34,21 +34,20 @@ const App = () => {
     }
   },[])
 
-  useEffect(()=>{
-     if(isInitialTheme)
-     {
+  useEffect(() => {
+    if (isInitialTheme) {
       setIsInitialTheme(false);
-     }
-      else{
-        window.location.reload()
+    } else {
+      setTheme(isDarkTheme ? "dark" : "light");
     }
-  },[isDarkTheme])
+  }, [isDarkTheme]);
+  
 
 
   const overrides={
     colors:{
       LIGHT:{primary: "0b5cff"},
-      Dark:{primary: "0b5cff"},
+      DARK:{primary: "0b5cff"},
     },
 
   };
